@@ -1,6 +1,6 @@
 <p>Be the next sought after Security guru by reading through our site's deep knowledge base!</p>
 
-<form>
+<!--form>
 <table>
 <tr>
 <td>Username :</td><td><input type="text" name="username"></td> <br>
@@ -15,4 +15,16 @@
 <td><input type="submit" value="Submit"></td>
   </tr>
 </table>
-</form>
+</form-->
+<%= form_tag({controller: "users", action: "create"}, method: "post", class: "new_user_form") do %>
+	<%= label_tag(:name, "Username:") %>
+	<%= text_field_tag(:name) %>
+	<br>
+	<%= label_tag(:email, "Email:") %>
+	<%= text_field_tag(:email) %>
+	<br>
+	<%= label_tag(:pwd, "Password:") %>
+	<%= password_field_tag(:pwd) %>
+	<br>
+	<%= submit_tag("submit") %>
+<% end %>
