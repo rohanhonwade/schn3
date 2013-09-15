@@ -1,0 +1,23 @@
+<p>Be the next sought after security guru by reading through our site's deep knowledge base!</p> 
+<br><br>
+<h3>Sign in</h3>
+<%= form_for :session, :url=>{:action=>"create"} do |form| %>
+
+<table>
+<tr>
+<td><%= form.label :email %></td>
+<td><%= form.text_field :email %></td>
+</tr>
+
+<tr>
+<td><%= form.label :password %></td>
+<td><%= form.password_field :password %></td>
+</tr>
+
+<tr>
+<td><%= form.submit "Submit" %></td>
+</tr>
+</table>
+<% end %>
+
+<p>New user? <%= link_to "Sign up!", new_user_path %></p>

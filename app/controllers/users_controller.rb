@@ -25,19 +25,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+#    flash[:message]="its here man"
     @user = User.new
-    @user.name = params[:name]
-    @user.email = params[:email]
-    @user.password = params[:password]
+    @user.name = params[:user][:name]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
 	
-    if User.find_by email: @user.email
-	redirect_to (@articles=Article.new) and return
-    end
-	
-
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to (@articles=Article.new) }
+      if @user.save!
+	flash[:message]='User was successfully created'
+        format.html { redirect_to articles_path }
         #format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else

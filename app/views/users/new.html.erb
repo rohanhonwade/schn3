@@ -1,5 +1,30 @@
-<h1>New user</h1>
+<p>Be the next sought after security guru by reading through our site's deep knowledge base!</p>
+<%= flash[:message] %>
+<!-- Form for user sign-up -->
+<%= form_for(@user) do |user| %>
+<table>
+<tr>
+<td><%= user.label :name %></td>
+<td><%= user.text_field :name %></td>
+</tr>
 
-<%= render 'form' %>
+<tr>
+<td><%= user.label :email %></td>
+<td><%= user.text_field :email %></td>
+</tr>
 
-<%= link_to 'Back', users_path %>
+<tr>
+<td><%= user.label :password %></td>
+<td><%= user.password_field :password %></td>
+</tr>
+
+<tr>
+<td><%= user.label :confirm_password %></td>
+<td><%= user.password_field :password_confirmation %></td>
+</tr>
+
+<tr>
+<td><%= user.submit "Create my account" %></td>
+</tr>
+</table>
+<% end %>

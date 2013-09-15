@@ -6,7 +6,7 @@
 <td>Username :</td><td><input type="text" name="username"></td> <br>
 </tr>
   <tr>
-<td>Email    : </td><td><input type="text" name="emailid"></td><br>
+<td>Email    : </td><td><input type="text" name="email"></td><br>
   </tr>
   <tr>
 <td>Password :</td><td><input type="password" name="pwd"></td> <br>
@@ -16,6 +16,7 @@
   </tr>
 </table>
 </form-->
+
 <%= form_tag({controller: "users", action: "create"}, method: "post", class: "new_user_form") do %>
 	<%= label_tag(:name, "Username:") %>
 	<%= text_field_tag(:name) %>
@@ -28,3 +29,4 @@
 	<br>
 	<%= submit_tag("submit") %>
 <% end %>
+

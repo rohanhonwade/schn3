@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    flash[:message]="now showing article show function"
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
@@ -24,7 +26,11 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    flash[:message]="Reached create action of Article conroller"
+    @article = Article.new
+    @article.name = params[:article][:name]
+    @article.category = params[:article][:category]
+    @article.data = params[:article][:data]	
 
     respond_to do |format|
       if @article.save

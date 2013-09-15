@@ -1,9 +1,8 @@
 <h1>List of all articles that you can read</h1>
-
+<%= flash[:message] %>
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,7 +12,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.id %></td>
+        <td><%= article.name %></td>
         <td><%= link_to 'Show', article %></td>
         <!--td><%= link_to 'Edit', edit_article_path(article) %></td-->
         <!--td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
