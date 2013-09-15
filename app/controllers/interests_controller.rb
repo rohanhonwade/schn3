@@ -24,11 +24,13 @@ class InterestsController < ApplicationController
   # POST /interests
   # POST /interests.json
   def create
+    flash[:message]="Reached create action of interests controller"
     @interest = Interest.new(interest_params)
 
     respond_to do |format|
       if @interest.save
         format.html { redirect_to @interest, notice: 'Interest was successfully created.' }
+	format.js
         format.json { render action: 'show', status: :created, location: @interest }
       else
         format.html { render action: 'new' }
