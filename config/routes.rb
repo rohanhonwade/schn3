@@ -5,4 +5,5 @@ Schn3::Application.routes.draw do
   root 'sessions#new'
 
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/allinterests', to: 'interests#allinterests', via: 'get'
 end

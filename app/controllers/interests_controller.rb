@@ -1,6 +1,10 @@
 class InterestsController < ApplicationController
   before_action :set_interest, only: [:show, :edit, :update, :destroy]
 
+  def allinterests
+    @interests=Interest.find :all
+      render :template => 'interests/allinterests.xml.builder', :layout => false 
+  end
   # GET /interests
   # GET /interests.json
   def index
