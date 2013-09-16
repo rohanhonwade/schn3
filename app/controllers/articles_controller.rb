@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    flash[:message]="now showing article show function"
+
     @article = Article.find(params[:id])
   end
 
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    flash[:message]="Reached create action of Article conroller"
+
     @article = Article.new
     @article.name = params[:article][:name]
     @article.category = params[:article][:category]
@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render action: 'show', status: :created, location: @article }
+        format.xml  #{ render :xml => xml.target! }
       else
         format.html { render action: 'new' }
         format.json { render json: @article.errors, status: :unprocessable_entity }

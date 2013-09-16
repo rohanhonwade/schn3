@@ -7,9 +7,13 @@ Category - <%= @article.category %>
 <!--%= link_to 'Edit', edit_article_path(@article) %--> 
 
 <!--%= form_tag({controller: "interests", action: "create"}, method: "post", class: "like_button") do %-->
+<% if !article_liked_by_user?(@article) %>
 <%= form_for @interest=Interest.new, url: {controller: "interests", action: "create"}, html: {class: "like_this", remote: true} do |a| %>
   <%= a.hidden_field(:user_id, value: current_user.id) %>
   <%= a.hidden_field(:article_id, value: @article.id) %>
   <%= a.submit("Liked this article?") %>
+<% end %>
+<% else %>
+    You like this article
 <% end %>
 <!--%= link_to 'Back', articles_path %-->

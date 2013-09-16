@@ -15,3 +15,12 @@
 <br>
 
 <!--%= link_to 'New Article', new_article_path %-->
+<h2> Recommended articles</h2>
+<% articles=get_recos %>
+<table>
+<% articles.each do |artcl| %>
+<tr>
+    <td><%= artcl.name %></td><td><%= link_to 'Show', artcl %></td>
+</tr>
+<% end %>
+</table>
