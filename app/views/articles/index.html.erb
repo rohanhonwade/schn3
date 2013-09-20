@@ -15,6 +15,7 @@
 <br>
 
 <!--%= link_to 'New Article', new_article_path %-->
+<% if signed_in? %>
 <h2> Recommended articles</h2>
 <% articles=get_recos %>
 <table>
@@ -22,5 +23,6 @@
 <tr>
     <td><%= artcl.name %></td><td><%= link_to 'Show', artcl %></td>
 </tr>
+<% end %>
 <% end %>
 </table>

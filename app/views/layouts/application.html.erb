@@ -9,6 +9,7 @@
 <body>
 <div align="right">
 <% if signed_in? %>
+<%= link_to "All Articles", articles_path %>
 <%= link_to "Sign out", signout_path, method: "delete" %>
 <% else %>
   <br>

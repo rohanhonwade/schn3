@@ -28,7 +28,7 @@ class InterestsController < ApplicationController
   # POST /interests
   # POST /interests.json
   def create
-    flash[:message]="Reached create action of interests controller"
+
     @interest = Interest.new(interest_params)
 
     respond_to do |format|

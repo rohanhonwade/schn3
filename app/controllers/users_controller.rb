@@ -33,7 +33,8 @@ class UsersController < ApplicationController
 	
     respond_to do |format|
       if @user.save
-	flash[:message]='User was successfully created'
+	      flash[:message]='User was successfully created'
+        sign_in(@user)
         format.html { redirect_to articles_path }
         format.json { render action: 'show', status: :created, location: @user }
       else
