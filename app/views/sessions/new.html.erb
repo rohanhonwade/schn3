@@ -1,5 +1,7 @@
-<p>Be the next sought after security guru by reading through our site's deep knowledge base!</p> 
-<br><br>
+<p>Be the next sought after security guru by reading through our site's deep knowledge base!</p>
+<br>
+<%= flash[:message] %>
+<br>
 <h3>Sign in</h3>
 <%= form_for :session, :url=>{:action=>"create"} do |form| %>
 
