@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="header">
 <div align="right">
 <% if signed_in? %>
 <%= link_to "All Articles", articles_path %>
@@ -15,9 +16,14 @@
   <br>
 <% end %>
 </div>
+
 <h1>BeTheNextSchneier.com</h1>
-<hr>
+</div>
+<br>
 <%= yield %>
 
+<div id="footer">
+
+</div>
 </body>
 </html>

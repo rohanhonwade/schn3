@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+    background:url('gradient2.png') repeat-x;
+
+}
+
+h1{
+    color:white;
+}
+
+#footer{
+
+
+}
